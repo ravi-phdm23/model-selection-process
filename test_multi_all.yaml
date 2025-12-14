@@ -1,0 +1,70 @@
+# Multi-Dataset Test - All 3 Datasets
+# Comprehensive test with all datasets and all model groups
+
+project:
+  name: "Multi-Dataset Test - All Datasets"
+  output_dir: "test_results/multi_all_datasets"
+  random_seed: 42
+  n_jobs: -1
+
+data:
+  datasets:
+    - path: "data/Australian Credit.csv"
+      name: "Australian Credit"
+      target_column: "target"
+
+    - path: "data/german_credit_record.csv"
+      name: "German Credit"
+      target_column: "target"
+
+    - path: "data/hmeq.csv"
+      name: "HMEQ"
+      target_column: "target"
+
+  preprocessing:
+    handle_missing: true
+    test_size: 0.3
+    smote: true
+    smote_k_neighbors: 5
+
+models:
+  groups:
+    - lr
+    - RF
+    - XGB
+
+  benchmark:
+    primary_metric: "AUC"
+    secondary_metrics:
+      - "F1"
+      - "KS"
+      - "PCC"
+
+analysis:
+  eda:
+    enabled: true
+    feature_importance: true
+
+  shap:
+    enabled: true
+    plot_types: [bar, dot]
+    max_display: 20
+
+  reliability:
+    enabled: true
+    n_permutations: 30
+
+  local_shap:
+    enabled: true
+    n_random: 3
+
+report:
+  latex:
+    enabled: true
+    compile_pdf: true
+    include_narratives: false
+
+logging:
+  level: "INFO"
+  log_file: "pipeline.log"
+  console_output: true

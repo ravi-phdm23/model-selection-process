@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -c:*)",
+      "Bash(python test_auto_save.py:*)",
+      "Bash(python -m py_compile:*)",
+      "Bash(cat:*)",
+      "Bash(python:*)",
+      "Bash(dir:*)",
+      "Bash(pdflatex:*)",
+      "Bash(gh repo create:*)",
+      "Bash(git add:*)",
+      "Bash(del nul)",
+      "Bash(git rm:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

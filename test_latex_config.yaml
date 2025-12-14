@@ -1,0 +1,51 @@
+analysis:
+  eda:
+    enabled: true
+    feature_importance: true
+    generate_profile: false
+  local_shap:
+    enabled: true
+    instances: []
+    n_random: 2
+  reliability:
+    enabled: true
+    n_permutations: 20
+  shap:
+    enabled: true
+    global_plots: true
+    max_display: 20
+    plot_types:
+    - bar
+    - dot
+data:
+  datasets:
+  - name: Australian Credit
+    path: data/Australian Credit.csv
+    target_column: target
+  preprocessing:
+    handle_missing: true
+    smote: true
+    smote_k_neighbors: 5
+    test_size: 0.3
+logging:
+  console_output: true
+  level: INFO
+  log_file: pipeline.log
+models:
+  benchmark:
+    primary_metric: AUC
+    secondary_metrics:
+    - F1
+    - KS
+  groups:
+  - lr
+project:
+  n_jobs: -1
+  name: Complete Pipeline Test
+  output_dir: output_test_latex
+  random_seed: 42
+report:
+  latex:
+    compile_pdf: true
+    enabled: true
+    include_narratives: false

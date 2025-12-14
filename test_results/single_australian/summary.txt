@@ -1,0 +1,18 @@
+================================================================================
+Model Selection Pipeline - Execution Summary
+================================================================================
+
+Timestamp: 2025-12-09 10:19:01
+Output Directory: test_results\single_australian
+
+Completed Stages:
+  [OK] data
+  [OK] eda
+  [OK] init
+  [OK] local
+  [OK] models
+  [OK] reliability
+  [OK] report
+  [OK] shap
+
+================================================================================

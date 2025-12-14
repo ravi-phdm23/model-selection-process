@@ -1,0 +1,157 @@
+2025-12-09 10:17:17 - pipeline - INFO - ================================================================================
+2025-12-09 10:17:17 - pipeline - INFO - Model Selection Pipeline Started
+2025-12-09 10:17:17 - pipeline - INFO - ================================================================================
+2025-12-09 10:17:17 - pipeline - INFO - Configuration: test_single_australian.yaml
+2025-12-09 10:17:17 - pipeline - INFO - Output directory: test_results\single_australian
+2025-12-09 10:17:17 - pipeline - INFO - Timestamp: 2025-12-09 10:17:17
+2025-12-09 10:17:17 - pipeline - INFO - ================================================================================
+2025-12-09 10:17:17 - pipeline - INFO - Configuration saved to test_results\single_australian\config_used.yaml
+2025-12-09 10:17:17 - pipeline - INFO - Pipeline will run 9 stages
+2025-12-09 10:17:17 - pipeline - INFO - 
+2025-12-09 10:17:17 - pipeline - INFO - ================================================================================
+2025-12-09 10:17:17 - pipeline - INFO - Stage: INIT
+2025-12-09 10:17:17 - pipeline - INFO - ================================================================================
+2025-12-09 10:17:17 - pipeline - INFO - Initializing pipeline...
+2025-12-09 10:17:17 - pipeline - INFO - [OK] Stage 'init' completed successfully
+2025-12-09 10:17:17 - pipeline - INFO - 
+2025-12-09 10:17:17 - pipeline - INFO - ================================================================================
+2025-12-09 10:17:17 - pipeline - INFO - Stage: DATA
+2025-12-09 10:17:17 - pipeline - INFO - ================================================================================
+2025-12-09 10:17:17 - pipeline - INFO - Loading and preprocessing data...
+2025-12-09 10:17:17 - pipeline - INFO - Loading 1 dataset(s)...
+2025-12-09 10:17:17 - pipeline - INFO - Loading dataset: Australian Credit
+2025-12-09 10:17:17 - pipeline - INFO -   File: data\Australian Credit.csv
+2025-12-09 10:17:17 - pipeline - INFO -   Target column: target
+2025-12-09 10:17:17 - pipeline - INFO -   Shape: (690, 15)
+2025-12-09 10:17:17 - pipeline - INFO -   No missing values found
+2025-12-09 10:17:17 - pipeline - INFO -   Class distribution: {1: 383, 0: 307}
+2025-12-09 10:17:17 - pipeline - INFO -   Train/test split: 483/207 (test_size=0.3)
+2025-12-09 10:17:17 - pipeline - INFO -   SMOTE applied: 483 -> 536 samples
+2025-12-09 10:17:17 - pipeline - INFO -   [OK] Loaded: Australian Credit
+2025-12-09 10:17:17 - pipeline - INFO - Successfully loaded 1 dataset(s)
+2025-12-09 10:17:17 - pipeline - INFO - Data loading complete:
+2025-12-09 10:17:17 - pipeline - INFO -   Datasets: 1
+2025-12-09 10:17:17 - pipeline - INFO -   Total train samples: 536
+2025-12-09 10:17:17 - pipeline - INFO -   Total test samples: 207
+2025-12-09 10:17:17 - pipeline - INFO - [OK] Stage 'data' completed successfully
+2025-12-09 10:17:17 - pipeline - INFO - 
+2025-12-09 10:17:17 - pipeline - INFO - ================================================================================
+2025-12-09 10:17:17 - pipeline - INFO - Stage: EDA
+2025-12-09 10:17:17 - pipeline - INFO - ================================================================================
+2025-12-09 10:17:17 - pipeline - INFO - Running EDA...
+2025-12-09 10:17:17 - pipeline - INFO - Running EDA for 1 dataset(s)...
+2025-12-09 10:17:17 - pipeline - INFO -   Analyzing: Australian Credit
+2025-12-09 10:17:18 - pipeline - INFO -   [OK] EDA completed for Australian Credit
+2025-12-09 10:17:18 - pipeline - INFO - EDA complete: 1 successful, 0 failed
+2025-12-09 10:17:18 - pipeline - INFO - [OK] Stage 'eda' completed successfully
+2025-12-09 10:17:18 - pipeline - INFO - 
+2025-12-09 10:17:18 - pipeline - INFO - ================================================================================
+2025-12-09 10:17:18 - pipeline - INFO - Stage: MODELS
+2025-12-09 10:17:18 - pipeline - INFO - ================================================================================
+2025-12-09 10:17:18 - pipeline - INFO - Training and benchmarking models...
+2025-12-09 10:17:18 - pipeline - INFO - Training models for 1 dataset(s)...
+2025-12-09 10:17:18 - pipeline - INFO - Selected model groups: ['lr', 'RF']
+2025-12-09 10:17:18 - pipeline - INFO -   Training models for: Australian Credit
+2025-12-09 10:17:18 - pipeline - INFO -     Training group: lr
+2025-12-09 10:17:18 - pipeline - INFO -       [OK] lr_lbfgs: AUC=0.9242
+2025-12-09 10:17:18 - pipeline - INFO -       [OK] lr_saga: AUC=0.9244
+2025-12-09 10:17:18 - pipeline - INFO -       [OK] lr_newton_cg: AUC=0.9243
+2025-12-09 10:17:18 - pipeline - INFO -     Training group: RF
+2025-12-09 10:17:18 - pipeline - INFO -       [OK] rf_100_mf_sqrt: AUC=0.9316
+2025-12-09 10:17:19 - pipeline - INFO -       [OK] rf_100_mf_0p1: AUC=0.9283
+2025-12-09 10:17:19 - pipeline - INFO -       [OK] rf_100_mf_0p25: AUC=0.9316
+2025-12-09 10:17:19 - pipeline - INFO -       [OK] rf_100_mf_0p5: AUC=0.9304
+2025-12-09 10:17:20 - pipeline - INFO -       [OK] rf_100_mf_1p0: AUC=0.9282
+2025-12-09 10:17:20 - pipeline - INFO -       [OK] rf_250_mf_sqrt: AUC=0.9328
+2025-12-09 10:17:21 - pipeline - INFO -       [OK] rf_250_mf_0p1: AUC=0.9277
+2025-12-09 10:17:22 - pipeline - INFO -       [OK] rf_250_mf_0p25: AUC=0.9328
+2025-12-09 10:17:22 - pipeline - INFO -       [OK] rf_250_mf_0p5: AUC=0.9308
+2025-12-09 10:17:23 - pipeline - INFO -       [OK] rf_250_mf_1p0: AUC=0.9285
+2025-12-09 10:17:25 - pipeline - INFO -       [OK] rf_500_mf_sqrt: AUC=0.9326
+2025-12-09 10:17:26 - pipeline - INFO -       [OK] rf_500_mf_0p1: AUC=0.9274
+2025-12-09 10:17:27 - pipeline - INFO -       [OK] rf_500_mf_0p25: AUC=0.9326
+2025-12-09 10:17:29 - pipeline - INFO -       [OK] rf_500_mf_0p5: AUC=0.9323
+2025-12-09 10:17:31 - pipeline - INFO -       [OK] rf_500_mf_1p0: AUC=0.9284
+2025-12-09 10:17:33 - pipeline - INFO -       [OK] rf_750_mf_sqrt: AUC=0.9319
+2025-12-09 10:17:35 - pipeline - INFO -       [OK] rf_750_mf_0p1: AUC=0.9273
+2025-12-09 10:17:37 - pipeline - INFO -       [OK] rf_750_mf_0p25: AUC=0.9319
+2025-12-09 10:17:39 - pipeline - INFO -       [OK] rf_750_mf_0p5: AUC=0.9316
+2025-12-09 10:17:42 - pipeline - INFO -       [OK] rf_750_mf_1p0: AUC=0.9284
+2025-12-09 10:17:44 - pipeline - INFO -       [OK] rf_1000_mf_sqrt: AUC=0.9322
+2025-12-09 10:17:47 - pipeline - INFO -       [OK] rf_1000_mf_0p1: AUC=0.9264
+2025-12-09 10:17:50 - pipeline - INFO -       [OK] rf_1000_mf_0p25: AUC=0.9322
+2025-12-09 10:17:53 - pipeline - INFO -       [OK] rf_1000_mf_0p5: AUC=0.9307
+2025-12-09 10:17:57 - pipeline - INFO -       [OK] rf_1000_mf_1p0: AUC=0.9282
+2025-12-09 10:17:57 - pipeline - INFO -   [OK] Trained 28 model(s) for Australian Credit
+2025-12-09 10:17:57 - pipeline - INFO - Saved training summary: test_results\single_australian\results\model_training_summary.csv
+2025-12-09 10:17:57 - pipeline - INFO - Running model benchmarking...
+2025-12-09 10:17:57 - pipeline - INFO -   Benchmarking: Australian Credit
+2025-12-09 10:17:57 - pipeline - INFO -     Best model: RF/rf_250_mf_sqrt (AUC=0.9328)
+2025-12-09 10:17:57 - pipeline - INFO - Saved cross-dataset summary: test_results\single_australian\results\cross_dataset_best_models.csv
+2025-12-09 10:17:57 - pipeline - INFO - 
+Best Models by Dataset:
+2025-12-09 10:17:57 - pipeline - INFO -   Australian Credit    -> RF/rf_250_mf_sqrt              (AUC=0.9328)
+2025-12-09 10:17:57 - pipeline - INFO - Model training complete:
+2025-12-09 10:17:57 - pipeline - INFO -   Total models trained: 28
+2025-12-09 10:17:57 - pipeline - INFO -   Best models identified: 1
+2025-12-09 10:17:57 - pipeline - INFO - [OK] Stage 'models' completed successfully
+2025-12-09 10:17:57 - pipeline - INFO - 
+2025-12-09 10:17:57 - pipeline - INFO - ================================================================================
+2025-12-09 10:17:57 - pipeline - INFO - Stage: SHAP
+2025-12-09 10:17:57 - pipeline - INFO - ================================================================================
+2025-12-09 10:17:57 - pipeline - INFO - Computing SHAP values...
+2025-12-09 10:17:57 - pipeline - INFO - Running SHAP analysis...
+2025-12-09 10:17:57 - pipeline - INFO -   Analyzing: Australian Credit
+2025-12-09 10:18:57 - pipeline - INFO -     [OK] SHAP analysis completed
+2025-12-09 10:18:57 - pipeline - INFO - SHAP analysis complete: 1 dataset(s)
+2025-12-09 10:18:57 - pipeline - INFO - [OK] Stage 'shap' completed successfully
+2025-12-09 10:18:57 - pipeline - INFO - 
+2025-12-09 10:18:57 - pipeline - INFO - ================================================================================
+2025-12-09 10:18:57 - pipeline - INFO - Stage: RELIABILITY
+2025-12-09 10:18:57 - pipeline - INFO - ================================================================================
+2025-12-09 10:18:57 - pipeline - INFO - Running reliability tests...
+2025-12-09 10:18:57 - pipeline - INFO - Running reliability testing...
+2025-12-09 10:18:57 - pipeline - INFO -   Permutations: 20
+2025-12-09 10:18:57 - pipeline - INFO -   Testing: Australian Credit
+2025-12-09 10:18:57 - pipeline - INFO -     [OK] Reliability: 0.9306 ± 0.0174
+2025-12-09 10:18:57 - pipeline - INFO - Saved reliability summary: test_results\single_australian\results\reliability_summary.csv
+2025-12-09 10:18:57 - pipeline - INFO - Reliability testing complete: 1 model(s)
+2025-12-09 10:18:57 - pipeline - INFO - [OK] Stage 'reliability' completed successfully
+2025-12-09 10:18:57 - pipeline - INFO - 
+2025-12-09 10:18:57 - pipeline - INFO - ================================================================================
+2025-12-09 10:18:57 - pipeline - INFO - Stage: LOCAL
+2025-12-09 10:18:57 - pipeline - INFO - ================================================================================
+2025-12-09 10:18:57 - pipeline - INFO - Analyzing local instances...
+2025-12-09 10:18:57 - pipeline - INFO - Running local SHAP analysis...
+2025-12-09 10:18:57 - pipeline - INFO -   Analyzing: Australian Credit
+2025-12-09 10:18:59 - pipeline - WARNING -         Failed to create waterfall plot: 'PermutationExplainer' object has no attribute 'expected_value'
+2025-12-09 10:18:59 - pipeline - WARNING -         Failed to create waterfall plot: 'PermutationExplainer' object has no attribute 'expected_value'
+2025-12-09 10:18:59 - pipeline - INFO -     [OK] Analyzed 2 instance(s)
+2025-12-09 10:18:59 - pipeline - INFO - Local analysis complete: 2 instance(s)
+2025-12-09 10:18:59 - pipeline - INFO - [OK] Stage 'local' completed successfully
+2025-12-09 10:18:59 - pipeline - INFO - 
+2025-12-09 10:18:59 - pipeline - INFO - ================================================================================
+2025-12-09 10:18:59 - pipeline - INFO - Stage: REPORT
+2025-12-09 10:18:59 - pipeline - INFO - ================================================================================
+2025-12-09 10:18:59 - pipeline - INFO - Generating reports...
+2025-12-09 10:18:59 - pipeline - INFO - Generating LaTeX report...
+2025-12-09 10:18:59 - pipeline - INFO -   Creating LaTeX document...
+2025-12-09 10:18:59 - pipeline - INFO -   LaTeX report saved: test_results\single_australian\reports\report_20251209_101859.tex
+2025-12-09 10:18:59 - pipeline - INFO -   Compiling PDF...
+2025-12-09 10:19:01 - pipeline - INFO -   PDF compiled: test_results\single_australian\reports\report_20251209_101859.pdf
+2025-12-09 10:19:01 - pipeline - INFO - Summary report saved: test_results\single_australian\PIPELINE_SUMMARY.txt
+2025-12-09 10:19:01 - pipeline - INFO - Report generation complete:
+2025-12-09 10:19:01 - pipeline - INFO -   LaTeX: test_results\single_australian\reports\report_20251209_101859.tex
+2025-12-09 10:19:01 - pipeline - INFO -   PDF: test_results\single_australian\reports\report_20251209_101859.pdf
+2025-12-09 10:19:01 - pipeline - INFO -   Summary: test_results\single_australian\PIPELINE_SUMMARY.txt
+2025-12-09 10:19:01 - pipeline - INFO - [OK] Stage 'report' completed successfully
+2025-12-09 10:19:01 - pipeline - INFO - 
+2025-12-09 10:19:01 - pipeline - INFO - ================================================================================
+2025-12-09 10:19:01 - pipeline - INFO - Stage: FINALIZE
+2025-12-09 10:19:01 - pipeline - INFO - ================================================================================
+2025-12-09 10:19:01 - pipeline - INFO - Finalizing pipeline...
+2025-12-09 10:19:01 - pipeline - INFO - Summary saved to test_results\single_australian\summary.txt
+2025-12-09 10:19:01 - pipeline - INFO - [OK] Stage 'finalize' completed successfully
+2025-12-09 10:19:01 - pipeline - INFO - ================================================================================
+2025-12-09 10:19:01 - pipeline - INFO - Pipeline completed successfully
+2025-12-09 10:19:01 - pipeline - INFO - ================================================================================

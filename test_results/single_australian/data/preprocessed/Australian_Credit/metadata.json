@@ -1,0 +1,26 @@
+{
+  "original_shape": [
+    690,
+    15
+  ],
+  "train_shape": [
+    536,
+    14
+  ],
+  "test_shape": [
+    207,
+    14
+  ],
+  "target_column": "target",
+  "class_distribution_before": {
+    "1": 383,
+    "0": 307
+  },
+  "class_distribution_after": {
+    "1": 268,
+    "0": 268
+  },
+  "test_size": 0.3,
+  "smote_applied": true,
+  "random_seed": 42
+}

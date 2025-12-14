@@ -1,0 +1,36 @@
+# Test Configuration for Pipeline Phase 1
+
+project:
+  name: "Phase 1 Test"
+  output_dir: "output_test_phase1"
+  random_seed: 42
+
+data:
+  datasets:
+    - path: "data/Australian Credit.csv"
+      target_column: "A15"
+
+models:
+  groups:
+    - lr
+    - RF
+
+analysis:
+  eda:
+    enabled: true
+  shap:
+    enabled: true
+  reliability:
+    enabled: false
+  local_shap:
+    enabled: false
+
+report:
+  latex:
+    enabled: true
+    compile_pdf: false
+
+logging:
+  level: "INFO"
+  log_file: "pipeline.log"
+  console_output: true

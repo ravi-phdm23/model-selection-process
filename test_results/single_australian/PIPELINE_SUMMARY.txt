@@ -1,0 +1,24 @@
+================================================================================
+MODEL SELECTION PIPELINE - EXECUTION SUMMARY
+================================================================================
+
+Project: Single Dataset Test - Australian
+
+DATA:
+  Datasets: 1
+  Total train samples: 536
+  Total test samples: 207
+
+MODELS:
+  Total models trained: 28
+
+BEST MODELS:
+  Australian Credit: RF/rf_250_mf_sqrt (AUC=0.9328)
+
+SHAP ANALYSIS: Completed for 1 dataset(s)
+
+RELIABILITY TESTING: Completed for 1 dataset(s)
+
+LOCAL ANALYSIS: 2 instance(s) analyzed
+
+================================================================================
